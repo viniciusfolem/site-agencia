@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Folem Mídia - Creative Process</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&amp;family=Space+Grotesk:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4a261", "primary-dark": "#e76f51",
+                        "background-light": "#fdfbf7",
+                        "background-dark": "#1a1614", "surface-dark": "#26211e",
+                    },
+                    fontFamily: {
+                        "display": ["Outfit", "sans-serif"], "body": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                    backgroundImage: {
+                        'nebula': 'radial-gradient(circle at 50% 50%, rgba(244, 162, 97, 0.15) 0%, rgba(26, 22, 20, 0) 70%)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1a1614
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #3d3430;
+            border-radius: 4px
+        }
+
+        .orbit-line-glow {
+            box-shadow: 0 0 20px 2px rgba(244, 162, 97, 0.3)
+        }
+
+        .planet-glow:hover {
+            box-shadow: 0 0 30px 5px rgba(244, 162, 97, 0.25)
+        }
+
+        .bg-grain {
+            background-image: url(https://lh3.googleusercontent.com/aida-public/AB6AXuAdryFArbAEfbaFeLc34peVgq8l71FMZvy4pw-S9OnLoBlh_nXjvssFqqsUzL1zz9xyT04dNJr-2Klx_UjEs_oHqKtjgTpPoU1rZTy-S_U6uiCAnspHzT6xRk7xrjcyFDTLM2kg8qWCFc7vJI73Oz8EDC7W-8gCUSWiS3GN4eiSgbQf5uU6IdavdQ9VMzq2dtvCR3p8exiOfVp3Dax7PdmsEt0LJ_jpB9FBRbh2DFAXaZWsTkF9YE_rT86aBzRJpqbgyO2dkkUqLr43);
+            pointer-events: none
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-body text-slate-900 dark:text-gray-200 antialiased overflow-x-hidden">
+    <div class="fixed inset-0 bg-grain z-0"></div>
+    <header
+        class="fixed top-0 z-50 w-full border-b border-[#3d3430] bg-[#1a1614]/90 backdrop-blur-md px-6 py-5 md:px-10">
+        <div class="mx-auto flex max-w-7xl items-center justify-between">
+            <div class="flex items-center gap-3 text-white">
+                <div class="flex items-center gap-1 font-display font-bold text-2xl tracking-widest uppercase">
+                    <span>F</span>
+                    <div class="relative flex items-center justify-center text-primary mx-[-2px]">
+                        <span class="material-symbols-outlined"
+                            style="font-size: 28px; font-variation-settings: 'FILL' 1;">all_inclusive</span>
+                    </div>
+                    <span>lem</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors"
+                    href="process.html">Processo</a>
+                <a class="text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors"
+                    href="#">Portfólio</a>
+                <a class="text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors"
+                    href="#">Sobre Nós</a>
+                <a class="text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-primary transition-colors"
+                    href="#">Contato</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden md:flex h-11 items-center justify-center rounded-full border border-primary/20 bg-primary/10 px-8 text-xs font-bold uppercase tracking-widest text-primary transition-all hover:scale-105 hover:bg-primary hover:text-[#1a1614]">
+                    <span>Iniciar Projeto</span>
+                </button>
+                <button class="md:hidden text-white">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <main class="relative pt-32 pb-24 z-10">
+        <div class="absolute inset-0 z-[-1] pointer-events-none overflow-hidden">
+            <div class="absolute top-0 left-1/4 h-[600px] w-[600px] rounded-full bg-[#f4a261]/5 blur-[120px]"></div>
+            <div class="absolute bottom-1/4 right-0 h-[700px] w-[700px] rounded-full bg-blue-900/5 blur-[150px]"></div>
+        </div>
+        <div class="layout-container relative z-10 mx-auto flex max-w-7xl flex-col px-4 md:px-10">
+            <div class="mb-24 flex flex-col items-center justify-center pt-10 text-center">
+                <div
+                    class="mb-6 inline-flex items-center gap-3 rounded-full border border-[#f4a261]/20 bg-[#f4a261]/5 px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.2em] text-primary backdrop-blur-sm">
+                    <span class="size-1.5 animate-pulse rounded-full bg-primary shadow-[0_0_8px_#f4a261]"></span>
+                    Workflow Interestelar
+                </div>
+                <h1
+                    class="font-display mb-8 max-w-4xl text-5xl font-medium leading-tight tracking-tight md:text-7xl lg:text-[80px] text-white">
+                    Sistema Solar de <br />
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-[#f4a261] to-[#e76f51]">Criação</span>
+                </h1>
+                <p class="max-w-2xl text-lg text-gray-400 md:text-xl font-light leading-relaxed">
+                    Nossa jornada para expandir o seu universo digital, orbitando da ignição à expansão intergaláctica
+                    com precisão astronômica.
+                </p>
+            </div>
+            <div class="relative mb-40 py-10">
+                <div
+                    class="absolute left-8 top-0 h-full w-[1px] bg-gradient-to-b from-transparent via-primary/30 to-transparent md:hidden">
+                </div>
+                <div class="absolute left-0 top-12 hidden h-[1px] w-full bg-[#3d3430] md:block"></div>
+                <div
+                    class="absolute left-0 top-12 hidden h-[1px] w-3/4 bg-gradient-to-r from-primary/0 via-primary to-primary/0 orbit-line-glow md:block">
+                </div>
+                <div
+                    class="absolute left-3/4 top-12 hidden -translate-x-1/2 -translate-y-1/2 transform md:flex flex-col items-center z-20">
+                    <div
+                        class="text-primary rotate-45 transform drop-shadow-[0_0_15px_rgba(244,162,97,0.6)] bg-[#1a1614] p-1 rounded-full border border-primary/30">
+                        <span class="material-symbols-outlined" style="font-size: 24px;">rocket_launch</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 gap-16 md:grid-cols-4 md:gap-8">
+                    <div
+                        class="group relative flex flex-row items-start gap-6 md:flex-col md:items-center md:text-center">
+                        <div
+                            class="relative z-10 flex size-16 shrink-0 items-center justify-center rounded-full border border-[#3d3430] bg-[#26211e] text-gray-500 transition-all duration-500 group-hover:border-primary group-hover:text-primary group-hover:bg-[#1a1614] planet-glow">
+                            <span class="material-symbols-outlined"
+                                style="font-size: 28px;">local_fire_department</span>
+                        </div>
+                        <div class="flex flex-col pt-4">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60 group-hover:text-primary transition-colors">Fase
+                                01</span>
+                            <h3
+                                class="font-display my-2 text-2xl text-white group-hover:text-primary transition-colors">
+                                Ignição</h3>
+                            <p class="text-sm leading-relaxed text-gray-400 font-light">Briefing &amp;
+                                Estratégia.<br />A faísca inicial da ideia.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-row items-start gap-6 md:flex-col md:items-center md:text-center">
+                        <div
+                            class="relative z-10 flex size-16 shrink-0 items-center justify-center rounded-full border border-[#3d3430] bg-[#26211e] text-gray-500 transition-all duration-500 group-hover:border-primary group-hover:text-primary group-hover:bg-[#1a1614] planet-glow">
+                            <span class="material-symbols-outlined" style="font-size: 28px;">travel_explore</span>
+                        </div>
+                        <div class="flex flex-col pt-4">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60 group-hover:text-primary transition-colors">Fase
+                                02</span>
+                            <h3
+                                class="font-display my-2 text-2xl text-white group-hover:text-primary transition-colors">
+                                Exploração</h3>
+                            <p class="text-sm leading-relaxed text-gray-400 font-light">Pesquisa &amp;
+                                Conceito.<br />Mapeando o terreno.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-row items-start gap-6 md:flex-col md:items-center md:text-center">
+                        <div
+                            class="relative z-10 flex size-16 shrink-0 items-center justify-center rounded-full border border-[#3d3430] bg-[#26211e] text-gray-500 transition-all duration-500 group-hover:border-primary group-hover:text-primary group-hover:bg-[#1a1614] planet-glow">
+                            <span class="material-symbols-outlined" style="font-size: 28px;">public</span>
+                        </div>
+                        <div class="flex flex-col pt-4">
+                            <span
+                                class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary/60 group-hover:text-primary transition-colors">Fase
+                                03</span>
+                            <h3
+                                class="font-display my-2 text-2xl text-white group-hover:text-primary transition-colors">
+                                Desenvolvimento</h3>
+                            <p class="text-sm leading-relaxed text-gray-400 font-light">Design &amp;
+                                Código.<br />Construindo o mundo.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="group relative flex flex-row items-start gap-6 md:flex-col md:items-center md:text-center">
+                        <div
+                            class="relative z-10 flex size-20 shrink-0 -mt-2 items-center justify-center rounded-full border-2 border-primary bg-[#1a1614] text-primary shadow-[0_0_20px_rgba(244,162,97,0.3)] transition-all duration-500 scale-110 planet-glow">
+                            <span class="material-symbols-outlined" style="font-size: 36px;">all_inclusive</span>
+                        </div>
+                        <div class="flex flex-col pt-4">
+                            <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Fase 04</span>
+                            <h3 class="font-display my-2 text-2xl font-bold text-white">Expansão</h3>
+                            <p class="text-sm leading-relaxed text-gray-400 font-light">Lançamento &amp;
+                                Crescimento.<br />Expandindo o universo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="mb-12 flex flex-col items-start justify-between gap-6 border-t border-[#3d3430] pt-20 md:flex-row md:items-end">
+                <div>
+                    <h2 class="font-display mb-3 text-4xl font-medium uppercase tracking-wide text-white md:text-5xl">
+                        Galáxias <span class="text-gray-600">que Criamos</span></h2>
+                    <p class="text-gray-400 font-light max-w-md">Explorações recentes em diversos setores digitais,
+                        desenhadas para o futuro.</p>
+                </div>
+                <a class="group flex items-center gap-3 rounded-full border border-[#3d3430] px-6 py-3 text-xs font-bold uppercase tracking-widest text-white hover:border-primary hover:text-primary transition-all"
+                    href="#">
+                    Ver todo o portfólio
+                    <span class="material-symbols-outlined transition-transform group-hover:translate-x-1"
+                        style="font-size: 16px;">arrow_forward</span>
+                </a>
+            </div>
+            <div class="grid grid-cols-12 gap-6">
+                <div
+                    class="group relative col-span-12 lg:col-span-8 h-[500px] overflow-hidden rounded-2xl bg-surface-dark cursor-pointer">
+                    <div class="absolute top-6 left-6 z-20 flex gap-2">
+                        <span
+                            class="rounded-full border border-white/10 bg-black/40 backdrop-blur-md px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-white">E-Commerce</span>
+                    </div>
+                    <img alt="Nebula Project"
+                        class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnbeKAqf4rQ8wv9b2iBTXnPUQ9mAMepPVu6kbx16NvnwBplrpRuw-zBGI5JtSuEt_KpXgYbNuGSUEqsMAi37tUHRmx5fYWpm8Qiild1pc8OQqGWvqXFbZcNl65PoHD8YBWsiA5hVJQW04y89caSMPu-ZS8ZII4dmWYF0_gKPNlHmFr6dNKm5ihHvv_mrduJPfYs26aCC-Ph3neTHmRPO8qZr46lIDhRW6WXJgbt5AlsZDRp2UCSOhKOmF59O-VGDXQSwPkb3oaBQaG" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#1a1614] via-[#1a1614]/40 to-transparent opacity-90">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                        <div>
+                            <h3 class="font-display mb-2 text-3xl font-bold text-white">Nebula Store</h3>
+                            <p class="text-gray-300 font-light max-w-md">Uma plataforma de comércio intergaláctico com
+                                experiência imersiva 3D e checkout instantâneo.</p>
+                        </div>
+                        <div
+                            class="flex size-12 shrink-0 items-center justify-center rounded-full border border-white/20 bg-white/5 text-white backdrop-blur-sm transition-all group-hover:bg-primary group-hover:border-primary group-hover:text-[#1a1614]">
+                            <span class="material-symbols-outlined" style="font-size: 20px;">arrow_outward</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-12 lg:col-span-4 flex flex-col gap-6 h-[500px]">
+                    <div class="group relative flex-1 overflow-hidden rounded-2xl bg-surface-dark cursor-pointer">
+                        <img alt="Dashboard Project"
+                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuClqhy4merPWgR8bxF9btbPjGHu82pPer7SOR8ayuntS-fSGvETQCI0IDyL-uxnBizCnU7WqlWCITiX0M6AQPrgPAWw83LpYqbEgzQQXsLuSSMiQMPxmmt9RLAm2a4nP1z50r5ItuuGFzkRg9UrQ8gx9y3dt8hRTU4El3NR7gPHYuQhUC-WQaCu70r_g3NXMn84tfMudbEDfhq8nQ7TJZiXxrcsE2sX95Ol7xwdleJH4-IMyiykBqjZK0XsHg2fkaG-wDzL-TkDYpsz" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a1614]/90 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <h3 class="font-display text-xl font-bold text-white">Apex Finanças</h3>
+                                    <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">App Design</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 rounded-2xl border border-primary/0 transition-all duration-500 group-hover:border-primary/50 group-hover:inset-4">
+                        </div>
+                    </div>
+                    <div class="group relative flex-1 overflow-hidden rounded-2xl bg-surface-dark cursor-pointer">
+                        <img alt="Cyberpunk Project"
+                            class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYSpPypFAmSI7yNbklJlCrmG4PQSa8A6ZmvX2tCx1LFahZmTFgDIGXtQbBIIvyzXlb_pwhe25a5VY_Oa_HZpjkC7YxiiWExC7BpoNWHqPGS1DWWTOLJLZE-mbSrK5gcCGY0m7h-ZfhANTzW2MsGGYem-riBvQ8ytIzgkH5HRpOg-6KzpWLQ-Yx2PzSXPc0phCvE6W1g21o0d-7kLDlRdoHT7ZDtQZGAFtU58BAMueYKz4dUIhIvVLI7LAUsOjqV0h4yDCgsQuItRtO" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#1a1614]/90 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-6 w-full">
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <h3 class="font-display text-xl font-bold text-white">Neon Pulse</h3>
+                                    <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider">Marketing</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute inset-0 rounded-2xl border border-primary/0 transition-all duration-500 group-hover:border-primary/50 group-hover:inset-4">
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="group relative col-span-12 h-96 overflow-hidden rounded-2xl bg-surface-dark mt-4 cursor-pointer">
+                    <img alt="Global Tech Project"
+                        class="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuhMlkV74UmwhwcM865eZISAKQdGgzrOa4zY9urHr7U8jo8S7QBj_GY7f1sxp1AdcrlJxOH0-uPzfeqMpJ-YjciSPOlCSvukRxjyQpXk_mzZUlDuG32NVOQoxB3KJ2x4YyQMCYL2rZOdCzOHEzt4iEC9GyrPICmjydA6AqyIawPN_dx9w-CIaUA5f8rEV0WStVW9JssDe0NE9qaq_3xGQvKmUkFgj285Nbhm3b_oBfgYXXmFPG-IJRS_R27IcKpYU-1VSJkGM6j72e" />
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#1a1614] via-[#1a1614]/60 to-transparent"></div>
+                    <div class="absolute inset-y-0 left-0 flex h-full max-w-2xl flex-col justify-center p-8 lg:p-16">
+                        <span
+                            class="mb-4 w-fit rounded bg-primary/20 px-2 py-1 text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/20">Institucional</span>
+                        <h3 class="font-display mb-4 text-4xl lg:text-5xl font-bold text-white">Orbital Systems</h3>
+                        <p class="mb-8 text-lg text-gray-300 font-light leading-relaxed">Rebranding completo para uma
+                            multinacional de telecomunicações, focando na conectividade global e velocidade da luz.</p>
+                        <button
+                            class="w-fit group-hover:translate-x-2 transition-transform duration-300 text-white font-bold flex items-center gap-2">
+                            Explorar Case
+                            <span class="h-[1px] w-8 bg-primary"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="border-t border-[#3d3430] bg-[#14100e] py-12 text-center">
+        <div class="flex flex-col items-center gap-6">
+            <div
+                class="flex items-center gap-1 font-display font-bold text-xl tracking-widest uppercase text-white opacity-50">
+                <span>F</span>
+                <div class="relative flex items-center justify-center text-white mx-[-2px]">
+                    <span class="material-symbols-outlined"
+                        style="font-size: 24px; font-variation-settings: 'FILL' 1;">all_inclusive</span>
+                </div>
+                <span>lem</span>
+            </div>
+            <p class="text-xs text-gray-600 uppercase tracking-widest">© 2023 Folem Mídia. Todos os direitos reservados
+                no universo conhecido.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

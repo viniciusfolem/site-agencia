@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Folem Mídia - Universos Digitais</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4a261","primary-dark": "#e08b4b",
+                        "secondary": "#ffffff",
+                        "accent-red": "#e94560","background-dark": "#0a0a0f",
+                        "background-deep": "#1a1a2e",
+                    },
+                    fontFamily: {
+                        "display": ["Orbitron", "sans-serif"],"sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        "space-gradient": "radial-gradient(circle at 70% 30%, #1a1a2e 0%, #0a0a0f 70%)",
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>.stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 50px 160px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 130px 80px, #ffffff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 160px 120px, #ffffff, rgba(0,0,0,0));
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }.logo-text {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-white font-sans overflow-x-hidden">
+<div class="relative min-h-screen w-full flex flex-col bg-space-gradient selection:bg-primary selection:text-white">
+<div class="stars z-0"></div>
+<header class="fixed top-0 left-0 w-full z-50 border-b border-white/10 backdrop-blur-sm bg-background-dark/30">
+<div class="layout-container flex h-full grow flex-col max-w-[1280px] mx-auto">
+<div class="flex items-center justify-between px-6 py-4 lg:px-12">
+<div class="flex items-center gap-1 text-white select-none">
+<span class="text-2xl font-black tracking-widest uppercase logo-text">F</span>
+<div class="relative flex items-center justify-center size-7 mx-0.5">
+<div class="absolute w-[140%] h-[35%] border-[3px] border-white rounded-[50%] -rotate-45 z-10 box-border border-t-transparent border-l-transparent"></div>
+<div class="absolute size-full rounded-full border-[3px] border-white bg-transparent z-0"></div>
+<div class="absolute w-[140%] h-[35%] border-[3px] border-white/60 rounded-[50%] -rotate-45 z-0 box-border border-b-transparent border-r-transparent"></div>
+</div>
+<span class="text-2xl font-black tracking-widest uppercase logo-text">LEM</span>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-white/80 hover:text-white text-sm font-medium transition-colors font-sans" href="#">Sobre</a>
+<a class="text-white/80 hover:text-white text-sm font-medium transition-colors font-sans" href="services.html">Serviços</a>
+<a class="text-white/80 hover:text-white text-sm font-medium transition-colors font-sans" href="process.html">Processo</a>
+<a class="text-white/80 hover:text-white text-sm font-medium transition-colors font-sans" href="dashboard.html">Dashboard</a>
+</nav>
+<div class="flex justify-end gap-4">
+<button class="hidden sm:flex cursor-pointer items-center justify-center rounded-lg h-10 px-6 bg-primary hover:bg-primary-dark transition-all text-background-dark text-sm font-bold tracking-wide shadow-lg shadow-primary/20 hover:shadow-primary/40 font-display">
+<span>Fale Conosco</span>
+</button>
+<button class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 flex items-center relative z-10 pt-20">
+<div class="layout-container w-full max-w-[1280px] mx-auto px-6 lg:px-12">
+<div class="@container">
+<div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20 py-12 lg:py-20">
+<div class="flex flex-col gap-8 flex-1 text-center lg:text-left items-center lg:items-start z-10">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit">
+<span class="size-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(244,162,97,0.8)]"></span>
+<span class="text-xs font-medium tracking-wider text-primary uppercase font-display">Agência Digital Premium</span>
+</div>
+<div class="flex flex-col gap-4">
+<h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] tracking-tight font-display">
+                                    EXPANDINDO <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60">UNIVERSOS DIGITAIS</span>
+</h1>
+<p class="text-white/70 text-base sm:text-lg font-light leading-relaxed max-w-xl mx-auto lg:mx-0 font-sans">
+                                    Assim como os anéis de Saturno, nossa gama de serviços trabalha em órbita perfeita para elevar sua marca ao infinito.
+                                </p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+<button class="group flex items-center justify-center gap-2 rounded-lg h-12 px-8 bg-primary hover:bg-primary-dark text-background-dark text-base font-bold tracking-wide transition-all shadow-lg shadow-primary/25 hover:shadow-primary/40 font-display">
+<span>Explorar Serviços</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="group flex items-center justify-center gap-2 rounded-lg h-12 px-8 border border-primary/50 text-primary hover:bg-primary/10 text-base font-bold tracking-wide transition-all font-display">
+<span>Iniciar Jornada</span>
+<span class="material-symbols-outlined text-lg">rocket</span>
+</button>
+</div>
+<div class="flex items-center gap-8 mt-4 pt-8 border-t border-white/10 w-full justify-center lg:justify-start">
+<div>
+<h3 class="text-2xl font-bold text-white font-display">50+</h3>
+<p class="text-xs text-white/50 uppercase tracking-wider font-sans">Projetos Lançados</p>
+</div>
+<div class="w-px h-8 bg-white/10"></div>
+<div>
+<h3 class="text-2xl font-bold text-white font-display">98%</h3>
+<p class="text-xs text-white/50 uppercase tracking-wider font-sans">Satisfação</p>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full flex justify-center lg:justify-end relative">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 blur-[100px] rounded-full pointer-events-none mix-blend-screen"></div>
+<div class="relative w-full aspect-square max-w-[500px] lg:max-w-[600px] floating-element">
+<div class="w-full h-full bg-center bg-contain bg-no-repeat drop-shadow-[0_20px_50px_rgba(244,162,97,0.15)]" data-alt="3D render of Saturn planet with glowing rings in dark space" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-a_0Mh_-HlvIW2IKJ-kzXRNOpLJHrHdO1kVAF0zQyzmQoZOBRauX19P7zKjfBJt08S4aecut2DCjfAHSyuAte-8hBydeU6KyPsLSJ8sm7Z-q_cgm4JBHinBtayaYW4n1obw4OB2uM0orE-LkOB1V4K0Izsnv-67QOlyWzbDVKdrlta-DVxsK2zW-iRrcjfrf8sa0D9xmwplcSH5DMS_SCdAbvA34tHX3CHiBBYZF7LwtudJ4FBh_BGFX65DcP6UBhGKLHtkgBrg6J'); mask-image: radial-gradient(circle, black 60%, transparent 100%); -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);">
+</div>
+<div class="absolute top-[20%] -left-4 sm:left-0 bg-background-dark/40 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-2xl animate-pulse">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-sm">analytics</span>
+</div>
+<div>
+<p class="text-xs text-white/60 font-sans">Crescimento</p>
+<p class="text-sm font-bold text-white font-display text-primary">+145% ROI</p>
+</div>
+</div>
+</div>
+<div class="absolute bottom-[20%] -right-4 sm:right-0 bg-background-dark/40 backdrop-blur-md border border-white/10 p-4 rounded-xl shadow-2xl">
+<div class="flex items-center gap-3">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined text-sm">campaign</span>
+</div>
+<div>
+<p class="text-xs text-white/60 font-sans">Alcance</p>
+<p class="text-sm font-bold text-white font-display">Global</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-50 hover:opacity-100 transition-opacity cursor-pointer">
+<span class="text-xs uppercase tracking-widest text-white/60 font-display">Descubra</span>
+<span class="material-symbols-outlined text-white/60">keyboard_arrow_down</span>
+</div>
+</div>
+</body></html>

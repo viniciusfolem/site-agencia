@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Client Galaxy Dashboard - Folem Mídia</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f4a261",
+                        "primary-dark": "#e08b4b",
+                        "secondary": "#ffffff",
+                        "accent-red": "#e94560",
+                        "background-dark": "#0a0a0f",
+                        "background-deep": "#1a1a2e",
+                        "glass-border": "rgba(255, 255, 255, 0.08)",
+                        "glass-bg": "rgba(255, 255, 255, 0.03)",
+                    },
+                    fontFamily: {
+                        "display": ["Orbitron", "sans-serif"],
+                        "sans": ["Space Grotesk", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        "space-gradient": "radial-gradient(circle at 70% 30%, #1a1a2e 0%, #0a0a0f 70%)",
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background-image:
+                radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0, 0, 0, 0)),
+                radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+                radial-gradient(1px 1px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+                radial-gradient(1px 1px at 130px 80px, #ffffff, rgba(0, 0, 0, 0)),
+                radial-gradient(1px 1px at 160px 120px, #ffffff, rgba(0, 0, 0, 0));
+            background-size: 200px 200px;
+            opacity: 0.3;
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.1em;
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 46, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(244, 162, 97, 0.2);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-link:hover .material-symbols-outlined {
+            text-shadow: 0 0 10px rgba(244, 162, 97, 0.6);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f4a261;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark text-white font-sans overflow-hidden h-screen flex">
+    <div class="stars z-0 fixed inset-0"></div>
+    <aside
+        class="w-20 lg:w-64 bg-background-deep border-r border-white/5 flex flex-col z-20 shrink-0 transition-all duration-300">
+        <div class="h-24 flex items-center justify-center lg:justify-start lg:px-8 border-b border-white/5">
+            <div class="flex items-center gap-1 text-white select-none scale-75 lg:scale-100 origin-left">
+                <span class="text-xl font-black tracking-widest uppercase logo-text hidden lg:block">F</span>
+                <div class="relative flex items-center justify-center size-8 mx-0.5">
+                    <div
+                        class="absolute w-[140%] h-[35%] border-[2px] border-primary rounded-[50%] -rotate-45 z-10 box-border border-t-transparent border-l-transparent shadow-[0_0_10px_rgba(244,162,97,0.5)]">
+                    </div>
+                    <div class="absolute size-full rounded-full border-[2px] border-white bg-transparent z-0"></div>
+                    <div
+                        class="absolute w-[140%] h-[35%] border-[2px] border-primary/40 rounded-[50%] -rotate-45 z-0 box-border border-b-transparent border-r-transparent">
+                    </div>
+                </div>
+                <span class="text-xl font-black tracking-widest uppercase logo-text hidden lg:block">LEM</span>
+            </div>
+        </div>
+        <nav class="flex-1 py-8 px-3 space-y-2 overflow-y-auto">
+            <a class="sidebar-link group flex items-center gap-4 px-3 py-3 rounded-lg bg-primary/10 border border-primary/20 text-white"
+                href="dashboard.html">
+                <span
+                    class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform">dashboard</span>
+                <span class="font-medium tracking-wide hidden lg:block">Dashboard</span>
+            </a>
+            <a class="sidebar-link group flex items-center gap-4 px-3 py-3 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                href="#">
+                <span
+                    class="material-symbols-outlined text-primary/70 group-hover:text-primary group-hover:scale-110 transition-transform">rocket_launch</span>
+                <span class="font-medium tracking-wide hidden lg:block">Missions</span>
+            </a>
+            <a class="sidebar-link group flex items-center gap-4 px-3 py-3 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                href="#">
+                <span
+                    class="material-symbols-outlined text-primary/70 group-hover:text-primary group-hover:scale-110 transition-transform">analytics</span>
+                <span class="font-medium tracking-wide hidden lg:block">Reports</span>
+            </a>
+            <a class="sidebar-link group flex items-center gap-4 px-3 py-3 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                href="#">
+                <span
+                    class="material-symbols-outlined text-primary/70 group-hover:text-primary group-hover:scale-110 transition-transform">folder_open</span>
+                <span class="font-medium tracking-wide hidden lg:block">Files</span>
+            </a>
+            <a class="sidebar-link group flex items-center gap-4 px-3 py-3 rounded-lg text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                href="#">
+                <span
+                    class="material-symbols-outlined text-primary/70 group-hover:text-primary group-hover:scale-110 transition-transform">chat</span>
+                <span class="font-medium tracking-wide hidden lg:block">Comms</span>
+                <span
+                    class="ml-auto bg-accent-red text-[10px] font-bold px-1.5 py-0.5 rounded text-white hidden lg:block">3</span>
+            </a>
+        </nav>
+        <div class="p-4 border-t border-white/5">
+            <div class="flex items-center gap-3 p-2 rounded-lg hover:bg-white/5 cursor-pointer transition-colors">
+                <div class="size-10 rounded-full bg-gradient-to-br from-primary to-primary-dark p-[2px]">
+                    <img alt="Commander Avatar" class="rounded-full bg-background-dark h-full w-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYEMxutar1cZoOD24nD-ntFfuhgA8eRlXSuGxg-D9RX38PjrD8l-oxYl2XziqkovWUjmzuY128-gNX6F4H0mio4Dd_D4acTc7tEK8igc0VM4CAlMdT5xgEk0Q1TEyuyzrMFTNi8cdc-QiwQr3xynSjM-G7S4FpX3TUGHfJizVUbVhUa1D4paBbJX0Um_nyijYvWvWfwMKE-ZhYQAusfV-Qm0B7XCwAqL8tDnhUza8bkC1Vs3OpN2eYoLRZ13ZYGMXcjquwdyXIozIF" />
+                </div>
+                <div class="hidden lg:block overflow-hidden">
+                    <p class="text-sm font-bold text-white truncate font-display">Cmdr. Shepard</p>
+                    <p class="text-xs text-white/50 truncate">Folem Client</p>
+                </div>
+            </div>
+        </div>
+    </aside>
+    <main class="flex-1 flex flex-col relative z-10 h-full overflow-hidden">
+        <header
+            class="h-24 px-8 flex items-center justify-between shrink-0 bg-background-dark/30 backdrop-blur-sm border-b border-white/5 z-30">
+            <div>
+                <p class="text-primary text-xs uppercase tracking-[0.2em] font-display mb-1">Folem Mídia Portal</p>
+                <h1 class="text-2xl lg:text-3xl font-bold font-display text-white">Welcome back, Commander</h1>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="relative hidden sm:block">
+                    <input
+                        class="bg-white/5 border border-white/10 rounded-full py-2 px-4 pl-10 text-sm text-white focus:outline-none focus:border-primary/50 w-64 font-sans placeholder-white/30 transition-all"
+                        placeholder="Search universe..." type="text" />
+                    <span
+                        class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/30 text-lg">search</span>
+                </div>
+                <button class="relative p-2 text-white/70 hover:text-white transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-2 right-2 size-2 bg-accent-red rounded-full animate-pulse"></span>
+                </button>
+            </div>
+        </header>
+        <div class="flex-1 overflow-y-auto p-6 lg:p-10 space-y-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+                <div class="glass-panel p-6 rounded-xl relative group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 rounded-lg bg-primary/10 text-primary border border-primary/20">
+                            <span class="material-symbols-outlined">rocket_launch</span>
+                        </div>
+                        <span
+                            class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded border border-primary/20">+1
+                            Launch</span>
+                    </div>
+                    <h3 class="text-white/60 text-sm font-medium mb-1">Active Projects</h3>
+                    <p class="text-3xl font-bold text-white font-display">04</p>
+                </div>
+                <div
+                    class="glass-panel p-6 rounded-xl relative group border-accent-red/40 shadow-[0_0_15px_rgba(233,69,96,0.1)]">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 rounded-lg bg-accent-red/10 text-accent-red border border-accent-red/20">
+                            <span class="material-symbols-outlined">warning</span>
+                        </div>
+                        <span class="flex h-2 w-2 relative">
+                            <span
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-red opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-accent-red"></span>
+                        </span>
+                    </div>
+                    <h3 class="text-white/60 text-sm font-medium mb-1">Pending Approvals</h3>
+                    <p class="text-3xl font-bold text-accent-red font-display">02</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl relative group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 rounded-lg bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                            <span class="material-symbols-outlined">timer</span>
+                        </div>
+                    </div>
+                    <h3 class="text-white/60 text-sm font-medium mb-1">Next Deadline</h3>
+                    <p class="text-3xl font-bold text-white font-display">3 Days</p>
+                    <p class="text-xs text-white/40 mt-1">Campaign Launch: Sirius B</p>
+                </div>
+                <div class="glass-panel p-6 rounded-xl relative group">
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="p-3 rounded-lg bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                            <span class="material-symbols-outlined">cloud_download</span>
+                        </div>
+                    </div>
+                    <h3 class="text-white/60 text-sm font-medium mb-1">Available Assets</h3>
+                    <p class="text-3xl font-bold text-white font-display">128</p>
+                    <p class="text-xs text-white/40 mt-1">2.4 GB Total</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
+                <div class="xl:col-span-2 glass-panel rounded-xl overflow-hidden flex flex-col">
+                    <div class="p-6 border-b border-white/5 flex items-center justify-between">
+                        <h2 class="text-lg font-bold font-display tracking-wide">Active Missions</h2>
+                        <button
+                            class="text-xs font-bold text-primary border border-primary/30 px-3 py-1.5 rounded hover:bg-primary/10 transition-colors uppercase tracking-wider">
+                            View All
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="text-xs text-white/40 uppercase tracking-wider border-b border-white/5">
+                                    <th class="px-6 py-4 font-medium">Mission Name</th>
+                                    <th class="px-6 py-4 font-medium">Team Lead</th>
+                                    <th class="px-6 py-4 font-medium">Status</th>
+                                    <th class="px-6 py-4 font-medium w-1/4">Trajectory</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-white/5 text-sm">
+                                <tr class="hover:bg-white/5 transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 rounded bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center font-display font-bold text-xs shadow-lg shadow-purple-900/20">
+                                                N
+                                            </div>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-white group-hover:text-primary transition-colors">
+                                                    Nebula Brand Lift</p>
+                                                <p class="text-xs text-white/40">Social Media</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex -space-x-2">
+                                            <img alt=""
+                                                class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrCu3DcKeapJ1SviKHZqN9IidBMrx_Ikc_bQH-2QG__2ge6Xhg3impOTXX27u5I2EmLA2CfSXKEK960SCqAqsPOo8e-c42izpj5HTJ-2J3eKNOxlkeYiITm6Ih6pqalAKc_-VUj0AZrzr1NTeFdGfAdh1BBWvObKwoBm7K5xwOZqllO4JFW-FnkTQZAYyv_yhiSsADrrE6jlixf9httllBER47wZvPXlmDDfVW34bHyYuiEw3WmmoQWcDDqoUl9652K_NmF6_WqfE9" />
+                                            <img alt=""
+                                                class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAoDUU5kTyobb_v18vRTDMa1wStIQ92pLbzKWp0KHUipPy4HZ0MnoyIgcnWnl6xz2Cxh4ETlCcAQonB6Vuu2YGmvd215y2kFf64S5Ld14LQ03gmdKJHK8yaOgyNhmf3vOCMj_w6ehv4Tu5bxuwU2jDSR4mIAIDgeAwFHS6uI36V72W9bbie6JyVtj1OCTJ_hI80iK576X6PpNnPZW5MrpPuPkydcNSohpxSKmcjAmyGso8RkoVsG-WYd0r6TR4XYE_oWA173dyQnjr" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20">
+                                            <span class="size-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+                                            In Orbit
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-full rounded-full"
+                                                style="width: 75%"></div>
+                                        </div>
+                                        <p class="text-xs text-right text-white/40 mt-1">75%</p>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 rounded bg-gradient-to-br from-primary to-orange-600 flex items-center justify-center font-display font-bold text-xs text-background-dark shadow-lg shadow-orange-900/20">
+                                                S
+                                            </div>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-white group-hover:text-primary transition-colors">
+                                                    Saturn V SEO</p>
+                                                <p class="text-xs text-white/40">Web Optimization</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <img alt="" class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDH6HBpDBYHzSTF2S4Q7hfntPwV6qWwXhk4kpFyKec2fypFfagY1mI4zOklTMI4ju5gWuY8c1Lq6g_gMik8-dtbaQBNdMIXLDykzHOqb_s6CzNdZ2kFBxDCJqKYDnATgty66EdfPpFE0lBgik5qJ2dVT8nIihkJEN1b66JsVAtwkl8t7pIdUMO_9kt52oCeKmW2RrvDi6yxcllDEUDRg4gigEFivdtGvk5xkVLjUUmMc6W1Ri47MzlbYeo142Yj2LDnFbY0GUAI0OlG" />
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-purple-500/10 text-purple-400 border border-purple-500/20">
+                                            <span class="material-symbols-outlined text-[10px]">bolt</span>
+                                            Warp Speed
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-primary to-orange-500 h-full rounded-full"
+                                                style="width: 45%"></div>
+                                        </div>
+                                        <p class="text-xs text-right text-white/40 mt-1">45%</p>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 rounded bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center font-display font-bold text-xs shadow-lg shadow-teal-900/20">
+                                                T
+                                            </div>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-white group-hover:text-primary transition-colors">
+                                                    Titan UX/UI</p>
+                                                <p class="text-xs text-white/40">Product Design</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex -space-x-2">
+                                            <img alt=""
+                                                class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA584RC2CVnaPiEqM_jX0SmVGNMIO_6_r3Hl0U5jpAZAZw4rt1YMPblzUeBbwuRDMTXA4y7M22l_40HoldUl-n9um154hOvqVDrP7pFuLQvzB4SQqICOJGwDuErFY3b71Ds67KwRDYxgqQzK5kRH-OVGp4Rpj5d8Po2_Camg4A-ueBHWO6QwgLNBNP-91EPKUiiGPhGdauJAqr04jmX6A4wZkUV4UbiQuWLU_98q0SJ3kstusRB0i8lj4sW9PcF4Qt950fsZOjFrp1m" />
+                                            <img alt=""
+                                                class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuChBVbSZ83NV3yHDjrThl7LbFO983DEKEg07_annLIfZvd8-CdazMTMKygMHFvkSbe_tgHbX7fvceZrjp81mDBb5baem0AbAOlOK28zbe0GYIcJmbes7Hm4Zu0KPqTeUdPHexXM-Depghum-aXbwLBjSWwobKDdxdsUMLzTQhVfEzbQ2J8hX2biNB1yGX0eq9myKye7YQzoWZMwUjUBk4LJl3i4Ko_cwNkQK5waaEJLmkQzSPV_E2uzS28YEolTzaazoTY8BZtZMWJu" />
+                                            <img alt=""
+                                                class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCq8mP-eFXD7soVJM5nWKg1HU5ttlbNLb5l00oB4yjdW2qfDWJdrC-mEt5qFKzBd7CVU-ehz46X_5TUUBiJI7B3W4nDZkozQTWEUEQ_5QrjjzgX2ZpLHuVew8dXFarflPzWSvXu-j5IT_gDJNcyXZ15TLbpscXUqCZNdnC0KoVRe7z1ut7i5Jh6U7-VHyLzc6_4EE3Px0f4ruXLtucLS2nbckD-4yB9Iu4FCUsNifYfX5EE5SRl0V-8hH5bdiBMd4v5LiKdV5GY0QcY" />
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                                            <span class="material-symbols-outlined text-[10px]">check_circle</span>
+                                            Docked
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                                            <div class="bg-gradient-to-r from-emerald-500 to-teal-500 h-full rounded-full"
+                                                style="width: 100%"></div>
+                                        </div>
+                                        <p class="text-xs text-right text-white/40 mt-1">100%</p>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-white/5 transition-colors group">
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="size-8 rounded bg-gradient-to-br from-pink-600 to-rose-600 flex items-center justify-center font-display font-bold text-xs shadow-lg shadow-rose-900/20">
+                                                A
+                                            </div>
+                                            <div>
+                                                <p
+                                                    class="font-bold text-white group-hover:text-primary transition-colors">
+                                                    Andromeda Ads</p>
+                                                <p class="text-xs text-white/40">PPC Campaign</p>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <img alt="" class="inline-block size-6 rounded-full ring-2 ring-background-dark"
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCikhvb7bwOD-kRluZc4VQoWSsFzrbyAo38GWvfa5iAqELt13pAtWJpPUW94B5FLvfw8o2GMreUJPZHkrB1cC-PL-EirGzLdSdUc5-2_7uykT09VXrzcH2n0JRswu_ajrosqrU1VSpzD5sZFFaZMt4w8BVjeYtrDQKj2rw_FnJvKvVW4d9pQKkhLSRQJHFuqAJc7kIA2KSVCXf5w7R4l6xp-4u4aCjrfZrudy9m0bQnlxZST6cTrCQNXrZNKMXBFyU1LjGRbv0wMtH6" />
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <span
+                                            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-medium bg-accent-red/10 text-accent-red border border-accent-red/20">
+                                            <span class="material-symbols-outlined text-[10px]">pause</span>
+                                            Hold
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                                            <div class="bg-accent-red/50 h-full rounded-full" style="width: 15%"></div>
+                                        </div>
+                                        <p class="text-xs text-right text-white/40 mt-1">15%</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="glass-panel rounded-xl flex flex-col h-full">
+                    <div class="p-6 border-b border-white/5">
+                        <h2 class="text-lg font-bold font-display tracking-wide flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-sm">history</span>
+                            Space Log
+                        </h2>
+                    </div>
+                    <div class="p-6 flex-1 overflow-y-auto">
+                        <div class="relative pl-4 border-l border-white/10 space-y-8">
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background-deep"></span>
+                                <p class="text-xs text-primary font-mono mb-1">09:42 AM</p>
+                                <p class="text-sm text-white font-medium">New asset uploaded</p>
+                                <p class="text-xs text-white/50 mt-1">"Q3_Report_Final.pdf" added to Files.</p>
+                            </div>
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-blue-500 ring-4 ring-background-deep"></span>
+                                <p class="text-xs text-blue-400 font-mono mb-1">Yesterday</p>
+                                <p class="text-sm text-white font-medium">Nebula Campaign Update</p>
+                                <p class="text-xs text-white/50 mt-1">Status changed to <span class="text-blue-300">In
+                                        Orbit</span>.</p>
+                            </div>
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-accent-red ring-4 ring-background-deep"></span>
+                                <p class="text-xs text-accent-red font-mono mb-1">2 Days Ago</p>
+                                <p class="text-sm text-white font-medium">Approval Required</p>
+                                <p class="text-xs text-white/50 mt-1">Titan UX/UI wireframes need review.</p>
+                                <button
+                                    class="mt-2 text-xs text-white border border-white/20 px-2 py-1 rounded hover:bg-white/10 transition-colors">Review
+                                    Now</button>
+                            </div>
+                            <div class="relative">
+                                <span
+                                    class="absolute -left-[21px] top-1 h-2.5 w-2.5 rounded-full bg-white/20 ring-4 ring-background-deep"></span>
+                                <p class="text-xs text-white/40 font-mono mb-1">Last Week</p>
+                                <p class="text-sm text-white/60">Mission Briefing</p>
+                                <p class="text-xs text-white/40 mt-1">Kickoff meeting for Saturn V SEO completed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
